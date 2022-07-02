@@ -1,15 +1,29 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+
 <body>
-<ul>
-    <li th:each="dto : ${list}"> <!-- 반복문 -->
-        [[${dto}]]
-    </li>
-</ul>
+
+    <!-- 반복문 -->
+    <ul>
+        <li th:each="dto : ${list}">
+            [[${dto}]]
+        </li>
+    </ul>
+
+    <br>
+
+    <!-- 상태 객체 state : 홀/짝, 순번, 인덱스 번호 등 지정 -->
+    <ul>
+        <li th:each="dto, state : ${list}">
+            [[${state.index}]] ---[[${dto}]]
+        </li>
+    </ul>
 
 </body>
+
 </html>
