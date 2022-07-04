@@ -39,9 +39,17 @@
         <li th:each="dto, state : ${list}">
             <span th:if="${dto.sno % 5 == 0}" th:text="${'---------------------'+dto.sno}"></span>
             <span th:unless="${dto.sno % 5 == 0}" th:text="${dto.first}"></span>
-
         </li>
     </ul>
+
+    <br>
+
+    <!-- 제어문 처리 삼항 연산자 -->
+    <ul>
+        <li th:each="dto, state : ${list}" th:text="${dto.sno % 5 == 0} ? ${dto.sno}"></li>
+    </ul>
+
+
 
 </body>
 
