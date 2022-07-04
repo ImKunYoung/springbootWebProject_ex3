@@ -24,7 +24,7 @@ public class SampleController {
         log.info("ex1.......................");
     }
 
-    @GetMapping({"/ex2"}) /* {"/ex2"} => 하나 이상의 url 지정 가능 */
+    @GetMapping({"/ex2", "/exLink"}) /* {"/ex2"} => 하나 이상의 url 지정 가능 */
     public void exModel(Model model) {
         List<SampleDTO> list = IntStream.rangeClosed(1, 20).asLongStream()
                 .mapToObj(i -> SampleDTO.builder()
