@@ -49,7 +49,12 @@
         <li th:each="dto, state : ${list}" th:text="${dto.sno % 5 == 0} ? ${dto.sno}"></li>
     </ul>
 
+    <br>
 
+    <!-- 제어문 처리 삼항 연산자 if else -->
+    <ul>
+        <li th:each="dto, state : ${list}" th:text="${dto.sno % 5 ==0} ? ${dto.sno} : ${dto.first}"></li>
+    </ul>
 
 </body>
 
