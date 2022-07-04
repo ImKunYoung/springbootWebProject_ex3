@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicReference;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -25,18 +26,14 @@ public class SampleController {
     @GetMapping({"/ex2"}) /* {"/ex2"} => 하나 이상의 url 지정 가능 */
     public void exModel(Model model) {
         List<SampleDTO> list = IntStream.rangeClosed(1, 20).asLongStream()
-                .mapToObj(i -> {
-                  SampleDTO dto = SampleDTO.builder()
-                          .sno(i)
-                          .first("First.."+i)
-                          .last("Last.."+i)
-                          .regTime(LocalDateTime.now())
-                          .build();
-                  return dto;
-                }).collect(Collectors.toList());
+                .mapToObj(i -> SampleDTO.builder()
+                        .sno(i)
+                        .first("First.." + i)
+                        .last("Last.." + i)
+                        .regTime(LocalDateTime.now())
+                        .build()).collect(Collectors.toList());
 
         log.info(list);
         model.addAttribute("list", list);
-
     }
 }

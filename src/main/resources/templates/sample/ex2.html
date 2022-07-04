@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -21,6 +20,26 @@
     <ul>
         <li th:each="dto, state : ${list}">
             [[${state.index}]] ---[[${dto}]]
+        </li>
+    </ul>
+
+    <br>
+
+    <!-- 제어문 처리 if -->
+    <ul>
+        <li th:each="dto, state : ${list}" th:if="${dto.sno%5==0}">
+            [[${dto}]]
+        </li>
+    </ul>
+
+    <br>
+
+    <!-- 제어문 처리 if else -->
+    <ul>
+        <li th:each="dto, state : ${list}">
+            <span th:if="${dto.sno % 5 == 0}" th:text="${'---------------------'+dto.sno}"></span>
+            <span th:unless="${dto.sno % 5 == 0}" th:text="${dto.first}"></span>
+
         </li>
     </ul>
 
