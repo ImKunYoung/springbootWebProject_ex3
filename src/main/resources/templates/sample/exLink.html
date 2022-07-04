@@ -14,14 +14,21 @@
 
 	<br>
 
-	<!-- 숫자 포맷팅 - jsp에서 JSTL 쓰던거 -->
+	<!-- thymeleaf 기본 객체: 숫자 포맷팅 - jsp에서 JSTL 쓰던거 -->
 	<ul>
 		<li th:each="dto : ${list}">
 			[[${#numbers.formatInteger(dto.sno, 5)}]]
 		</li>
 	</ul>
 
+	<br>
 
+	<!-- thymeleaf LocalDateTime -->
+	<ul>
+		<li th:each="dto : ${list}">
+			[[${dto.sno}]] --- [[${#temporals.format(dto.regTime, 'yyyy/MM/dd')}]]
+		</li>
+	</ul>
 
 </body>
 </html>
