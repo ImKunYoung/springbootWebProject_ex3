@@ -69,6 +69,15 @@
         <li th:each="dto, state: ${list}" th:class="${dto.sno % 5 == 0}?'target'" th:text="${dto}"></li>
     </ul>
 
+    <br>
+
+    <!-- th:block - 루프 등을 별도로 처리할 때 -->
+    <ul>
+        <th:block th:each="dto:${list}">
+            <li th:text="${dto.sno % 5 == 0}?${dto.sno}:${dto.first}"></li>
+        </th:block>
+    </ul>
+
 </body>
 
 </html>
