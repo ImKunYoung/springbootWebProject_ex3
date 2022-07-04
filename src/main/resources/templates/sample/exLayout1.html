@@ -6,7 +6,11 @@
 </head>
 <body>
 
+	<!-- Thymeleaf 의 레이아웃 -3 fragment 파일 전체를 추가 -->
 	<h1>Fragment Test</h1>
+	<div style="border: 1px solid blue">
+		<th:block th:replace="~{/fragments/fragment2}"/>
+	</div>
 
 	<!-- Thymeleaf 의 레이아웃 -1 replace 방식의 처리 (기존 내용을 완전히 대체...jsp include 처럼) -->
 	<!-- <div><h2>Part 2</h2></div> -->
