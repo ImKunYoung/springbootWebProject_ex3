@@ -10,7 +10,6 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicReference;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -59,7 +58,7 @@ public class SampleController {
         log.info("ex3");
     }
 
-    @GetMapping({"/exLayout1", "exLayout2"})
+    @GetMapping({"/exLayout1", "exLayout2", "exTemplate"})
     public void exLayout1() {
         log.info("exLayout........");
     }
